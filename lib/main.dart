@@ -1,10 +1,15 @@
 import 'package:clock_notifications/notification_service.dart';
 import 'package:clock_notifications/service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:timezone/data/latest.dart' as tz;
+
+import 'home_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   NotifyService().initNotification();
+  tz.initializeTimeZones();
   runApp(const MyApp());
 }
 
@@ -65,11 +70,14 @@ class _MyHomePageState extends State<MyHomePage> {
             }, child: Text("Stop Notification")),
             ElevatedButton(onPressed: (){
               NotifyService().showNotification(title: "Hello World", body: 'It Works');
-            }, child: Text("Button Press"))
-
+            }, child: Text("Button Press")),
+            DatePickerTxt(),
+            ScheduleBtn(),
           ],
         ),
       )
     );
   }
 }
+
+
