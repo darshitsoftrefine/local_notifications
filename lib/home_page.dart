@@ -15,7 +15,7 @@ class _DatePickerTxtState extends State<DatePickerTxt> {
   @override
   Widget build(BuildContext context) {
     return TextButton(onPressed: (){
-      DatePicker.showDateTimePicker(context,
+      DatePicker.showTimePicker(context,
         showTitleActions: true,
         onChanged: (date) => scheduleTime = date,
         onConfirm: (date) {},);

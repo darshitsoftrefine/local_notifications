@@ -1,3 +1,4 @@
+import 'package:clock_notifications/clock_service.dart';
 import 'package:clock_notifications/notification_service.dart';
 import 'package:clock_notifications/service.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: SendNot(),
     );
   }
 }
@@ -70,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
             }, child: Text("Stop Notification")),
             ElevatedButton(onPressed: (){
               NotifyService().showNotification(title: "Hello World", body: 'It Works');
-            }, child: Text("Button Press")),
+            }, child: Text("IOS")),
             DatePickerTxt(),
             ScheduleBtn(),
           ],
